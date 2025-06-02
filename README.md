@@ -6,19 +6,20 @@ This section outlines all the corrections and improvements made to the project d
 
 ## ✅ Configuration Corrections
 
-To ensure compatibility with React 18, I have added an override in `package.json` to force `react-focus-lock` (a sub-dependency) to use React version `^18.2.0`.
+- **To ensure compatibility with React 18, I have added an override in `package.json` to force `react-focus-lock` (a sub-dependency) to use React version `^18.2.0`**.
 
-```json
+```
 "overrides": {
   "react-focus-lock": {
     "react": "^18.2.0"
   }
 }
----
-- Fixed incorrect database connection URI.
-- Corrected build settings in `vite.config.js` / `webpack.config.js`.
-- Resolved port conflicts in `server.js` or `index.js`.
-- Adjusted CORS settings to prevent cross-origin issues.
+```
+
+- **Fixed incorrect database connection URI.**
+- **Corrected build settings in `vite.config.js` / `webpack.config.js`.**
+- **Resolved port conflicts in `server.js` or `index.js`.**
+- **Adjusted CORS settings to prevent cross-origin issues.**
 
 ---
 
