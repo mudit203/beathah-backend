@@ -65,13 +65,13 @@ npm audit fix --force
    router.get('/global', getGlobalSetting);    PATH:- routes/settingRoutes.js
 
 
-   router.get('/dashboard-count', getDashboardCount);    PATH:- routes/orderRoutes.js
+   router.get('/dashboard/count', getDashboardCount);    PATH:- routes/orderRoutes.js
 
 
-   router.get('/dashboard-amount', getDashboardAmount);  PATH:- routes/orderRoutes.js
+   router.get('/dashboard/amount', getDashboardAmount);  PATH:- routes/orderRoutes.js
 
 
-   router.get('/dashboard/best-seller', getBestSellerProductChart);   PATH:- routes/orderRoutes.js
+   router.get('/dashboard/best-seller', getBestSellerProductChart);  PATH:- routes/orderRoutes.js
   ```
    **AFTER:-**  **CORRECT**
   ```
