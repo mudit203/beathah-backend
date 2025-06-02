@@ -71,7 +71,7 @@ npm audit fix --force
    router.get('/dashboard-amount', getDashboardAmount);  PATH:- routes/orderRoutes.js
 
 
-   router.get('/dashboard/best-seller', getBestSellerProductChart);
+   router.get('/dashboard/best-seller', getBestSellerProductChart);   PATH:- routes/orderRoutes.js
   ```
    **AFTER:-**  **CORRECT**
   ```
@@ -96,9 +96,9 @@ npm audit fix --force
 
 ## Connection Verification Results
 
-**✅ Database Connection: MongoDB connection successful**
-**✅ API Routes: All backend routes responding correctly**
-**✅ Authentication: JWT token generation and validation working**
+- **✅ Database Connection: MongoDB connection successful**
+- **✅ API Routes: All backend routes responding correctly**
+- **✅ Authentication: JWT token generation and validation working**
 
 ---
 
