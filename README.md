@@ -31,18 +31,21 @@ res.send({
         
       });
 
-
+```
 
 ## 🧩 Configuration and Dependency Fixes
 
 **Problem:** Missing peer dependencies causing package conflicts and installation warnings.
 
 **Solution:** Resolved peer dependency issues using npm install commands
+
+ ## Fixed peer dependencies:-
  ```
- # Fixed peer dependencies:-
 npm install --legacy-peer-deps
 
-# Alternative solutions used:-
+ ```
+ **Alternative solutions used:-**
+ ```
 npm install --force
 npm audit fix --force
  ```
@@ -84,7 +87,7 @@ npm audit fix --force
    router.get('/best-seller/chart', getBestSellerProductChart);  PATH:- routes/orderRoutes.js
   ```
 
-  ```
+  
 ✅ **ISSUES FIXED,ALL ROUTES WORKING AS EXPECTED**
 
 ---
