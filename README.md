@@ -15,60 +15,89 @@ This section outlines all the corrections and improvements made to the project d
   }
 }
 ```
+---
 
-- **Fixed incorrect database connection URI.**
-- **Corrected build settings in `vite.config.js` / `webpack.config.js`.**
-- **Resolved port conflicts in `server.js` or `index.js`.**
-- **Adjusted CORS settings to prevent cross-origin issues.**
+## Correction in registerAdmin controller
+
+-**The registerAdmin function in the `controller/adminController.js` was not returing the joiningDate in correct format,converted it into LocaleString to return the correct format.**
+```
+res.send({
+        token,
+        _id: staff._id,
+        name: staff.name,
+        email: staff.email,
+        role: staff.role,
+       ** joiningDate: new Date().toLocaleString(),**
+        
+      });
+
+
+
+## 🧩 Configuration and Dependency Fixes
+
+**Problem:** Missing peer dependencies causing package conflicts and installation warnings.
+
+**Solution:** Resolved peer dependency issues using npm install commands
+ ```
+ # Fixed peer dependencies:-
+npm install --legacy-peer-deps
+
+# Alternative solutions used:-
+npm install --force
+npm audit fix --force
+ ```
 
 ---
 
-## 🔁 Incorrect Route Corrections
+## 🔍 API route path Fixes
+  
 
-- Corrected wrong route paths (e.g., changed `/user/list` to `/users`).
-- Fixed incorrect HTTP methods (e.g., `GET` → `POST`).
-- Updated middleware order for proper authentication and authorization.
-- Fixed route parameter mismatches.
-- Restructured nested routes to follow RESTful design conventions.
+  **Problem:** Backend routes were incorrect resulting to the error in response
 
----
+  **Solution:** Updated route paths to use proper REST API URL structure with forward slashes
+  
+  **BEFORE:-** **INCORRECT**
+  ```
 
-## 🧩 Component Fixes
+   router.get('/global', getGlobalSetting);    PATH:- routes/settingRoutes.js
 
-- Renamed incorrectly imported or misnamed components.
-- Fixed props passing and state management bugs.
-- Removed unused or deprecated components.
-- Reorganized the component folder structure for clarity.
 
----
+   router.get('/dashboard-count', getDashboardCount);    PATH:- routes/orderRoutes.js
 
-## 🔍 Logic and Functionality Fixes
 
-- Resolved infinite loops caused by incorrect `useEffect` dependencies.
-- Added proper null/undefined checks before accessing data.
-- Corrected form submission logic and validation.
-- Optimized condition checks and rendering logic.
-- Fixed broken API calls and async/await usage.
+   router.get('/dashboard-amount', getDashboardAmount);  PATH:- routes/orderRoutes.js
 
----
 
-## 🎨 UI/UX Improvements (Optional)
+   router.get('/dashboard/best-seller', getBestSellerProductChart);
+  ```
+   **AFTER:-**  **CORRECT**
+  ```
+   router.get('/global/all', getGlobalSetting);         PATH:- routes/settingRoutes.js
 
-- Updated layout issues for responsiveness.
-- Fixed inconsistent button styles and hover effects.
-- Improved mobile view rendering.
-- Aligned spacing and typography for better readability.
+   
+   router.get('/dashboard-count', getDashboardCount);    PATH:- routes/orderRoutes.js
 
----
 
-## 🧪 Testing and Debugging Fixes
+   router.get('/dashboard-amount', getDashboardAmount);  PATH:- routes/orderRoutes.js
 
-- Fixed failing unit/integration tests.
-- Corrected test case logic.
-- Added missing test coverage for new components/routes.
-- Resolved console warnings and runtime errors.
+
+   router.get('/best-seller/chart', getBestSellerProductChart);  PATH:- routes/orderRoutes.js
+  ```
+
+  ```
+✅ **ISSUES FIXED,ALL ROUTES WORKING AS EXPECTED**
 
 ---
 
-Feel free to add more entries under each section as your project evolves!
+---
+
+## Connection Verification Results
+
+**✅ Database Connection: MongoDB connection successful**
+**✅ API Routes: All backend routes responding correctly**
+**✅ Authentication: JWT token generation and validation working**
+
+---
+
+
 

@@ -20,7 +20,7 @@ router.post('/global/add', addGlobalSetting);
 //get global setting
 router.get('/global/all', getGlobalSetting);
 
-//update global setting
+//update global setting 
 router.put('/global/:id', updateGlobalSetting);
 
 
