@@ -14,7 +14,7 @@ To ensure compatibility with React 18, I have added an override in `package.json
     "react": "^18.2.0"
   }
 }
-
+---
 - Fixed incorrect database connection URI.
 - Corrected build settings in `vite.config.js` / `webpack.config.js`.
 - Resolved port conflicts in `server.js` or `index.js`.
